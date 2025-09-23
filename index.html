@@ -1,298 +1,245 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tuğba Boztepe - Psikolojik Danışman</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --main-color: #b8a4d1;
-      --text-color: #333;
-      --bg-color: #f8f7fc;
-      --white: #ffffff;
-      --whatsapp: #25D366;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tuğba Boztepe - Psikolojik Danışman</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --main-color: #b8a4d1;
+    --text-color: #333;
+    --bg-color: #f8f7fc;
+    --white: #fff;
+    --whatsapp: #25D366;
+  }
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-top: 140px; /* header yüksekliği kadar */
+  }
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 140px; /* makul yükseklik */
+    background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
+    color: white;
+    padding: 15px 30px 15px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* whatsapp konumu için */
+  }
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 4px;
+  }
+  header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-bottom: 12px;
+  }
+  nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .header-contact-info {
+    margin-top: 8px;
+    font-size: 0.95em;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .header-contact-info a {
+    color: white;
+    text-decoration: underline;
+  }
+  .header-contact-info a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+  /* WhatsApp butonu header içinde sağ alt köşede */
+  .whatsapp {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    background-color: var(--whatsapp);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+  .whatsapp:hover {
+    background-color: #1ebe5d;
+  }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding-top: 180px; /* header yüksekliği kadar */
-      /* scroll-padding-top kaldırıldı, offset scroll ile halledilecek */
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
-      padding: 30px 20px 40px;
-      color: white;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: flex;
+  section {
+    width: 90%;
+    max-width: 800px;
+    background: var(--white);
+    margin: 50px auto 50px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  }
+  section h2 {
+    color: var(--main-color);
+    font-size: 1.5em;
+    margin-bottom: 30px; /* başlık alt boşluk */
+  }
+  #hakkimda > div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  #hakkimda img {
+    width: 220px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  #hakkimda p {
+    flex: 1;
+    line-height: 1.6;
+  }
+  section p, section li {
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  .review {
+    background-color: #f1edf8;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--main-color);
+    border-radius: 8px;
+    font-style: italic;
+  }
+  .review span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.95em;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  input, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+  button {
+    background-color: var(--main-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #a28bc3;
+  }
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f0eef6;
+    color: #555;
+    font-size: 0.95em;
+  }
+  footer .contact-info {
+    margin-top: 15px;
+    line-height: 1.7;
+  }
+  footer .contact-info a {
+    color: #6e5c95;
+    text-decoration: none;
+  }
+  footer .contact-info a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    #hakkimda > div {
       flex-direction: column;
       align-items: center;
+    }
+    #hakkimda img {
+      width: 100%;
+      max-width: 300px;
+    }
+    nav {
+      gap: 12px;
+    }
+    header h1 {
+      font-size: 1.6em;
+    }
+    .header-contact-info {
+      font-size: 0.9em;
       gap: 10px;
     }
-
-    nav {
-      width: 100%;
-      max-width: 800px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-      order: 1;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    header h1 {
-      font-size: 2em;
-      margin-bottom: 0;
-      order: 0;
-    }
-
-    header p {
-      font-size: 1.1em;
-      opacity: 0.9;
-      margin-bottom: 10px;
-      order: 2;
-    }
-
-    .header-contact-info {
-      width: 100%;
-      max-width: 800px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      font-size: 0.95em;
-      order: 3;
-    }
-
-    .header-contact-info a {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .header-contact-info a:hover {
-      text-decoration: none;
-      opacity: 0.8;
-    }
-
     .whatsapp {
-      position: fixed;
-      bottom: 20px;
+      padding: 8px 14px;
+      font-size: 14px;
+      bottom: 10px;
       right: 20px;
-      background-color: var(--whatsapp);
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 1100;
-      transition: background-color 0.3s ease;
     }
-
-    .whatsapp:hover {
-      background-color: #1ebe5d;
-    }
-
-    section {
-      width: 90%;
-      max-width: 800px;
-      background: var(--white);
-      margin: 50px auto 50px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-    }
-
-    section h2 {
-      color: var(--main-color);
-      font-size: 1.5em;
-      margin-bottom: 30px; /* başlık altına boşluk eklendi */
-    }
-
-    #hakkimda > div {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    #hakkimda img {
-      width: 220px;
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-
-    #hakkimda p {
-      flex: 1;
-      line-height: 1.6;
-    }
-
-    section p, section li {
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .review {
-      background-color: #f1edf8;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-left: 5px solid var(--main-color);
-      border-radius: 8px;
-      font-style: italic;
-    }
-
-    .review span {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      font-style: normal;
-      font-size: 0.95em;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-
-    button {
-      background-color: var(--main-color);
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #a28bc3;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background-color: #f0eef6;
-      color: #555;
-      font-size: 0.95em;
-    }
-
-    footer .contact-info {
-      margin-top: 15px;
-      line-height: 1.7;
-    }
-
-    footer .contact-info a {
-      color: #6e5c95;
-      text-decoration: none;
-    }
-
-    footer .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      #hakkimda > div {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #hakkimda img {
-        width: 100%;
-        max-width: 300px;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      header h1 {
-        font-size: 1.6em;
-      }
-
-      .header-contact-info {
-        flex-direction: column;
-        gap: 8px;
-        font-size: 0.9em;
-      }
-
-      .whatsapp {
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 16px;
-        font-size: 14px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
 <header>
+  <h1>Tuğba Boztepe</h1>
+  <p>Psikolojik Danışman</p>
   <nav>
     <a href="#hakkimda" class="scroll-link">Hakkımda</a>
     <a href="#hizmetler" class="scroll-link">Hizmetler</a>
     <a href="#yorumlar" class="scroll-link">Görüşler</a>
     <a href="#iletisim" class="scroll-link">İletişim</a>
   </nav>
-
-  <h1>Tuğba Boztepe</h1>
-  <p>Psikolojik Danışman</p>
-
   <div class="header-contact-info">
     <span>📍 Kocaeli</span>
     <span>📞 <a href="tel:+905073369590">+90 507 336 95 90</a></span>
     <span>📸 <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank" rel="noopener noreferrer">@psk.dan.tugbaboztepe</a></span>
   </div>
+  <a href="https://wa.me/905073369590" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </header>
-
-<a href="https://wa.me/905073369590" class="whatsapp" target="_blank" rel="noopener noreferrer">
-  WhatsApp
-</a>
 
 <section id="hakkimda">
   <h2>Hakkımda</h2>
@@ -361,21 +308,15 @@
 </footer>
 
 <script>
-  // Menü linklerine tıklayınca header yüksekliğini hesaplayıp scroll offset uygula
   document.querySelectorAll('a.scroll-link').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', e => {
       e.preventDefault();
-      const href = this.getAttribute('href');
+      const href = link.getAttribute('href');
       const target = document.querySelector(href);
       if (!target) return;
-
       const headerHeight = document.querySelector('header').offsetHeight;
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-
-      window.scrollTo({
-        top: targetPosition - headerHeight - 20, // biraz daha boşluk eklendi
-        behavior: 'smooth'
-      });
+      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10; // biraz boşluk
+      window.scrollTo({top: offsetTop, behavior: 'smooth'});
     });
   });
 </script>
