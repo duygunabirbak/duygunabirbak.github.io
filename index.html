@@ -25,7 +25,7 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      padding-top: 220px;
+      padding-top: 240px;
     }
 
     header {
@@ -35,10 +35,39 @@
       width: 100%;
       z-index: 1000;
       background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
-      padding: 60px 20px 100px;
+      padding: 30px 20px 100px;
       color: white;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .header-img {
+      width: 100px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .header-text {
+      text-align: center;
+    }
+
+    .header-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .header-text p {
+      font-size: 1.1em;
+      opacity: 0.9;
     }
 
     nav {
@@ -57,16 +86,6 @@
 
     nav a:hover {
       text-decoration: underline;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1em;
-      opacity: 0.9;
     }
 
     section {
@@ -195,6 +214,27 @@
     }
 
     @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .header-img {
+        width: 80px;
+      }
+
+      header {
+        padding: 30px 20px 90px;
+      }
+
+      .header-text h1 {
+        font-size: 1.8em;
+      }
+
+      .header-text p {
+        font-size: 0.95em;
+      }
+
       #hakkimda > div {
         flex-direction: column;
         align-items: center;
@@ -215,24 +255,27 @@
         display: inline-block;
         margin: 5px 10px;
       }
-
-      header h1 {
-        font-size: 1.8em;
-      }
     }
   </style>
 </head>
 <body>
 
 <header>
+  <div class="header-content">
+    <img src="https://duygunabirbak.github.io/header1.jpg" alt="Sol görsel" class="header-img left" />
+    <div class="header-text">
+      <h1>Tuğba Boztepe</h1>
+      <p>Psikolojik Danışman</p>
+    </div>
+    <img src="https://duygunabirbak.github.io/header2.jpg" alt="Sağ görsel" class="header-img right" />
+  </div>
+
   <nav>
     <a href="#hakkimda">Hakkımda</a>
     <a href="#hizmetler">Hizmetler</a>
     <a href="#yorumlar">Görüşler</a>
     <a href="#iletisim">İletişim</a>
   </nav>
-  <h1>Tuğba Boztepe</h1>
-  <p>Psikolojik Danışman</p>
 </header>
 
 <section id="hakkimda">
