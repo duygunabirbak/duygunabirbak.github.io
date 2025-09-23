@@ -26,31 +26,44 @@
   header {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 140px; /* makul yükseklik */
+    height: 140px;
     background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
     color: white;
-    padding: 15px 30px 15px 30px;
+    padding: 15px 30px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
     position: relative; /* whatsapp konumu için */
   }
-  header h1 {
-    font-size: 2em;
-    margin-bottom: 4px;
+  /* Sol kısım: isim ve unvan */
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  header p {
+  .header-left h1 {
+    font-size: 2em;
+    line-height: 1.1;
+  }
+  .header-left p {
     font-size: 1.1em;
     opacity: 0.9;
-    margin-bottom: 12px;
+    margin-top: 4px;
+  }
+
+  /* Sağ kısım: menü ve iletişim */
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
   nav {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
   }
   nav a {
     color: white;
@@ -65,20 +78,19 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
   .header-contact-info {
-    margin-top: 8px;
     font-size: 0.95em;
     display: flex;
     gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
   }
-  .header-contact-info a {
+  .header-contact-info span, .header-contact-info a {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
+    white-space: nowrap;
   }
   .header-contact-info a:hover {
-    text-decoration: none;
-    opacity: 0.8;
+    text-decoration: underline;
   }
 
   /* WhatsApp butonu header içinde sağ alt köşede */
@@ -113,7 +125,7 @@
   section h2 {
     color: var(--main-color);
     font-size: 1.5em;
-    margin-bottom: 30px; /* başlık alt boşluk */
+    margin-bottom: 30px;
   }
   #hakkimda > div {
     display: flex;
@@ -195,29 +207,35 @@
     text-decoration: underline;
   }
   @media (max-width: 768px) {
-    #hakkimda > div {
+    header {
       flex-direction: column;
-      align-items: center;
+      height: auto;
+      padding: 20px 20px 50px;
+      align-items: flex-start;
+      padding-bottom: 70px; /* whatsapp butonu için yer */
     }
-    #hakkimda img {
-      width: 100%;
-      max-width: 300px;
+    .header-left {
+      margin-bottom: 15px;
     }
     nav {
+      flex-wrap: wrap;
       gap: 12px;
-    }
-    header h1 {
-      font-size: 1.6em;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      width: 100%;
     }
     .header-contact-info {
+      justify-content: flex-start;
+      gap: 15px;
       font-size: 0.9em;
-      gap: 10px;
+      flex-wrap: wrap;
     }
     .whatsapp {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
       padding: 8px 14px;
       font-size: 14px;
-      bottom: 10px;
-      right: 20px;
     }
   }
 </style>
@@ -225,18 +243,22 @@
 <body>
 
 <header>
-  <h1>Tuğba Boztepe</h1>
-  <p>Psikolojik Danışman</p>
-  <nav>
-    <a href="#hakkimda" class="scroll-link">Hakkımda</a>
-    <a href="#hizmetler" class="scroll-link">Hizmetler</a>
-    <a href="#yorumlar" class="scroll-link">Görüşler</a>
-    <a href="#iletisim" class="scroll-link">İletişim</a>
-  </nav>
-  <div class="header-contact-info">
-    <span>📍 Kocaeli</span>
-    <span>📞 <a href="tel:+905073369590">+90 507 336 95 90</a></span>
-    <span>📸 <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank" rel="noopener noreferrer">@psk.dan.tugbaboztepe</a></span>
+  <div class="header-left">
+    <h1>Tuğba Boztepe</h1>
+    <p>Psikolojik Danışman</p>
+  </div>
+  <div class="header-right">
+    <nav>
+      <a href="#hakkimda" class="scroll-link">Hakkımda</a>
+      <a href="#hizmetler" class="scroll-link">Hizmetler</a>
+      <a href="#yorumlar" class="scroll-link">Görüşler</a>
+      <a href="#iletisim" class="scroll-link">İletişim</a>
+    </nav>
+    <div class="header-contact-info">
+      <span>📍 Kocaeli</span>
+      <span>📞 <a href="tel:+905073369590">+90 507 336 95 90</a></span>
+      <span>📸 <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank" rel="noopener noreferrer">@psk.dan.tugbaboztepe</a></span>
+    </div>
   </div>
   <a href="https://wa.me/905073369590" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 </header>
@@ -315,7 +337,7 @@
       const target = document.querySelector(href);
       if (!target) return;
       const headerHeight = document.querySelector('header').offsetHeight;
-      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10; // biraz boşluk
+      const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
       window.scrollTo({top: offsetTop, behavior: 'smooth'});
     });
   });
