@@ -1,144 +1,196 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psikolojik Danışman Tuğba Boztepe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #b8a4d1;
-            --secondary-color: #ffffff;
-            --accent-color: #6a7ba2;
-            --background-color: #f8f7fc;
-            --whatsapp-green: #47c97c;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Psikolojik Danışman Tuğba Boztepe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #b8a4d1;
+      --secondary-color: #ffffff;
+      --accent-color: #6a7ba2;
+      --background-color: #f8f7fc;
+      --whatsapp-green: #47c97c;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: #333;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: #333;
+    }
 
-        header {
-            background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    header {
+      background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-        header p {
-            font-size: 1.1em;
-            font-weight: 300;
-        }
+    header p {
+      font-size: 1.1em;
+      font-weight: 300;
+    }
 
-        section {
-            background-color: var(--secondary-color);
-            margin: 30px auto;
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 900px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-        }
+    section {
+      background-color: var(--secondary-color);
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
 
-        section h2 {
-            font-family: 'Poppins', sans-serif;
-            color: var(--accent-color);
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
+    section h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--accent-color);
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
 
-        section p, section li {
-            font-size: 1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
+    section p, section li {
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
 
-        section ul {
-            padding-left: 20px;
-        }
+    section ul {
+      padding-left: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f0eef6;
-            color: #555;
-        }
+    /* Danışan kartları */
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        .whatsapp-button {
-            display: inline-block;
-            background-color: var(--whatsapp-green);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
+    .review-card {
+      background-color: #f3f2fa;
+      padding: 20px;
+      border-left: 5px solid var(--primary-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
 
-        .whatsapp-button:hover {
-            background-color: #3ab16f;
-        }
+    .review-card p {
+      margin: 0;
+      font-style: italic;
+      font-size: 1em;
+    }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em;
-            }
+    .review-card span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #666;
+      font-size: 0.95em;
+    }
 
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+    /* WhatsApp sabit buton */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--whatsapp-green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #3ab16f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0eef6;
+      color: #555;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .whatsapp-float {
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Psikolojik Danışman Tuğba Boztepe</h1>
-    <p>19 Danışandan 5/5 Puan • İstanbul</p>
+  <h1>Psikolojik Danışman Tuğba Boztepe</h1>
+  <p>19 Danışandan 5/5 Puan • İstanbul</p>
 </header>
 
 <section>
-    <h2>Hakkımda</h2>
-    <p>Merhaba, ben Psikolojik Danışman Tuğba Boztepe. 2010 yılında İstanbul Üniversitesi Psikolojik Danışmanlık ve Rehberlik bölümünden mezun oldum. Ardından, İstanbul Üniversitesi'nde Klinik Psikoloji alanında yüksek lisans eğitimimi tamamlayarak uzmanlık kazandım.</p>
-    <p>10 yılı aşkın süredir; bireysel, çocuk, ergen ve yetişkin psikolojisi alanlarında profesyonel psikoterapi hizmeti sunmaktayım. Seanslarımı hem yüz yüze hem de Türkiye'nin her yerinden online olarak gerçekleştirmekteyim.</p>
-    <p>Çalışma alanlarım arasında; anksiyete bozuklukları, obsesif kompulsif bozukluk (OKB), depresyon, travma sonrası stres bozukluğu (TSSB), ilişki sorunları ve çocukluk dönemi problemleri yer almaktadır. Ayrıca, tuvalet alışkanlığı, memeden kesme süreci, akademik ve sınav kaygısı, iletişim güçlükleri ve utangaçlık gibi çocukluk çağı sorunları üzerine de yoğun olarak çalışmaktayım.</p>
+  <h2>Hakkımda</h2>
+  <p>Merhaba, ben Psikolojik Danışman Tuğba Boztepe. 2010 yılında İstanbul Üniversitesi Psikolojik Danışmanlık ve Rehberlik bölümünden mezun oldum. Ardından, İstanbul Üniversitesi'nde Klinik Psikoloji alanında yüksek lisans eğitimimi tamamlayarak uzmanlık kazandım.</p>
+  <p>10 yılı aşkın süredir; bireysel, çocuk, ergen ve yetişkin psikolojisi alanlarında profesyonel psikoterapi hizmeti sunmaktayım. Seanslarımı hem yüz yüze hem de Türkiye'nin her yerinden online olarak gerçekleştirmekteyim.</p>
+  <p>Çalışma alanlarım arasında; anksiyete bozuklukları, obsesif kompulsif bozukluk (OKB), depresyon, travma sonrası stres bozukluğu (TSSB), ilişki sorunları ve çocukluk dönemi problemleri yer almaktadır. Ayrıca, tuvalet alışkanlığı, memeden kesme süreci, akademik ve sınav kaygısı, iletişim güçlükleri ve utangaçlık gibi çocukluk çağı sorunları üzerine de yoğun olarak çalışmaktayım.</p>
 </section>
 
 <section>
-    <h2>Hizmetlerim</h2>
-    <ul>
-        <li>EMDR Terapisi</li>
-        <li>Şema Terapi</li>
-        <li>Dinamik Psikoterapi</li>
-        <li>Anksiyete ve Panik Bozuklukları</li>
-        <li>Depresyon Tedavisi</li>
-        <li>Travma ve TSSB</li>
-    </ul>
+  <h2>Hizmetlerim</h2>
+  <ul>
+    <li>EMDR Terapisi</li>
+    <li>Şema Terapi</li>
+    <li>Dinamik Psikoterapi</li>
+    <li>Anksiyete ve Panik Bozuklukları</li>
+    <li>Depresyon Tedavisi</li>
+    <li>Travma ve TSSB</li>
+  </ul>
 </section>
 
 <section>
-    <h2>Danışan Görüşleri</h2>
-    <p>"Tuğba Hanım ile çalışmaya başladığımdan beri hayatımda çok büyük değişiklikler oldu. Panik ataklarım tamamen kontrol altına girdi. Çok empatik ve anlayışlı bir yaklaşımı var." - Ayşe K.</p>
-    <p>"Evlilik yaşantımızda ciddi problemler yaşıyorduk. Tuğba Hanım'ın çift terapisi sayesinde eşimle aramızdaki iletişimi yeniden kurduk. Gerçekten çok memnunum." - Mehmet T.</p>
+  <h2>Danışan Görüşleri</h2>
+  <div class="reviews">
+    <div class="review-card">
+      <p>"Tuğba Hanım ile çalışmaya başladığımdan beri hayatımda çok büyük değişiklikler oldu. Panik ataklarım tamamen kontrol altına girdi. Çok empatik ve anlayışlı bir yaklaşımı var."</p>
+      <span>- Ayşe K.</span>
+    </div>
+    <div class="review-card">
+      <p>"Evlilik yaşantımızda ciddi problemler yaşıyorduk. Tuğba Hanım'ın çift terapisi sayesinde eşimle aramızdaki iletişimi yeniden kurduk. Gerçekten çok memnunum."</p>
+      <span>- Mehmet T.</span>
+    </div>
+  </div>
 </section>
+
+<a href="https://wa.me/905073369590" class="whatsapp-float" target="_blank">
+  WhatsApp ile İletişime Geç
+</a>
 
 <footer>
-    <a href="https://wa.me/905073369590" class="whatsapp-button" target="_blank">WhatsApp ile İletişime Geç</a>
+  &copy; 2025 Psikolojik Danışman Tuğba Boztepe
 </footer>
 
 </body>
