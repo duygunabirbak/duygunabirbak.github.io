@@ -18,13 +18,14 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      padding-top: 220px; /* Sabit header yüksekliği kadar boşluk */
+      padding-top: 220px;
     }
 
     header {
@@ -84,16 +85,15 @@
       margin-bottom: 15px;
     }
 
-    /* Hakkımda içeriği */
     #hakkimda > div {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+      flex-wrap: nowrap;
+      align-items: flex-start;
       gap: 20px;
     }
 
     #hakkimda img {
-      width: 180px;
+      width: 220px;
       border-radius: 12px;
       flex-shrink: 0;
     }
@@ -101,7 +101,6 @@
     #hakkimda p {
       flex: 1;
       line-height: 1.6;
-      margin-bottom: 0;
     }
 
     section p, section li {
@@ -175,14 +174,35 @@
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       background-color: #f0eef6;
-      color: #666;
+      color: #555;
+      font-size: 0.95em;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
+    footer .contact-info {
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    footer .contact-info a {
+      color: #6e5c95;
+      text-decoration: none;
+    }
+
+    footer .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      #hakkimda > div {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #hakkimda img {
+        width: 100%;
+        max-width: 300px;
       }
 
       nav {
@@ -196,14 +216,8 @@
         margin: 5px 10px;
       }
 
-      #hakkimda > div {
-        flex-direction: column;
-      }
-
-      #hakkimda img {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+      header h1 {
+        font-size: 1.8em;
       }
     }
   </style>
@@ -226,13 +240,7 @@
   <div>
     <img src="https://duygunabirbak.github.io/tugba.png" alt="Tuğba Boztepe" />
     <p>
-     Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır.Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı(450 saat ) eğitmini ve süpervizyon sürecini tamamlamıştır. İstanbul Pskodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır.
-
-Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğum Akademsi Hamilelik ve Doğum Psikoterapistliği Eğitimini- Doğuma Hazırlık Eğtmenliği (132 saat) eğitimi almıştır. Davranış Bilimleri Enstitüsünden EMDR ( Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır.
-
-
-Çocuk Merkezli Oyun Terapisi Eğtimi(2-10yaş çocuklar için ) ni Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leter Zeka Test uygulayıcısı eğtimini almıştır.
-
+      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olmuştur. Yetişkin, çocuk ve çiftlerle çalışmakta; EMDR, psikodrama, oyun terapisi gibi alanlarda uzmanlaşmıştır. İstanbul Psikodrama Enstitüsü'nde Co-Psikodramatist ünvanı almış, EMDR ve Çözüm Odaklı Terapi eğitimlerini tamamlamıştır.
     </p>
   </div>
 </section>
@@ -277,6 +285,11 @@ Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğu
 
 <footer>
   &copy; 2025 Tuğba Boztepe - Psikolojik Danışman
+  <div class="contact-info">
+    📍 Adres: İstanbul, Kadıköy<br />
+    📞 Telefon: <a href="tel:+905073369590">+90 507 336 95 90</a><br />
+    📸 Instagram: <a href="https://instagram.com/tugbaboztepe" target="_blank">@tugbaboztepe</a>
+  </div>
 </footer>
 
 </body>
