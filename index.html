@@ -1,278 +1,91 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Psikolojik Danışman Tuğba Boztepe</title>
-  <style>
-    /* Genel sıfırlamalar */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f5f5f5;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Nav menü */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      font-size: 1rem;
-      color: #333;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #007BFF;
-    }
-
-    /* Hero / üst bölüm */
-    .hero {
-      background-color: #eaeaea;
-      /* placeholder için boş alan */
-      /* background: url('PLACEHOLDER_IMAGE_URL') center / cover no-repeat; */
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #222;
-    }
-
-    /* İçerik bölümleri */
-    section {
-      margin: 40px 0;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #222;
-    }
-
-    section p {
-      margin-bottom: 15px;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    /* Grid düzeni örneği (resim + metin yan yana) */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .grid .image-placeholder {
-      background-color: #ccc;
-      width: 100%;
-      height: 200px;
-    }
-
-    .grid .text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    /* Form bölümü */
-    .contact-form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-form label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .contact-form button {
-      padding: 10px;
-      font-size: 1rem;
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .contact-form button:hover {
-      background-color: #0056b3;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px 0;
-    }
-
-    footer .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer p {
-      margin: 5px 0;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      nav ul {
-        flex-direction: column;
-        margin-top: 10px;
-      }
-
-      nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psikolojik Danışman Tuğba Boztepe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #3b5998;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .whatsapp-button {
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">LOGO</div>
-        <ul>
-          <li><a href="#">Anasayfa</a></li>
-          <li><a href="#">Hakkımızda</a></li>
-          <li><a href="#">Hizmetler</a></li>
-          <li><a href="#">İletişim</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <div class="hero">
-    <h1>Online Psikoloji Başlığı</h1>
-  </div>
+<header>
+    <h1>Psikolojik Danışman Tuğba Boztepe</h1>
+    <p>19 Danışandan 5/5 Puan • İstanbul</p>
+</header>
 
-  <section class="container">
-    <h2>Hakkımızda</h2>
-    <div class="grid">
-      <div class="image-placeholder"></div>
-      <div class="text">
-        <p>Buraya “Hakkımızda” metni gelecek. Bu bölümde kim olduğunuz, misyonunuz, vizyonunuz hakkında bilgi verin.</p>
-      </div>
-    </div>
-  </section>
+<section>
+    <h2>Hakkımda</h2>
+    <p>Merhaba, ben Psikolojik Danışman Tuğba Boztepe. 2010 yılında İstanbul Üniversitesi Psikolojik Danışmanlık ve Rehberlik bölümünden mezun oldum. Ardından, İstanbul Üniversitesi'nde Klinik Psikoloji alanında yüksek lisans eğitimimi tamamlayarak uzmanlık kazandım.</p>
+    <p>10 yılı aşkın süredir; bireysel, çocuk, ergen ve yetişkin psikolojisi alanlarında profesyonel psikoterapi hizmeti sunmaktayım. Seanslarımı hem yüz yüze hem de Türkiye'nin her yerinden online olarak gerçekleştirmekteyim.</p>
+    <p>Çalışma alanlarım arasında; anksiyete bozuklukları, obsesif kompulsif bozukluk (OKB), depresyon, travma sonrası stres bozukluğu (TSSB), ilişki sorunları ve çocukluk dönemi problemleri yer almaktadır. Ayrıca, tuvalet alışkanlığı, memeden kesme süreci, akademik ve sınav kaygısı, iletişim güçlükleri ve utangaçlık gibi çocukluk çağı sorunları üzerine de yoğun olarak çalışmaktayım.</p>
+</section>
 
-  <section class="container">
-    <h2>Hizmetlerimiz</h2>
-    <div class="grid">
-      <div class="text">
-        <p>Online Terapi</p>
-        <p>Ebeveyn Danışmanlığı</p>
-        <p>Stres ve Anksiyete Yönetimi</p>
-      </div>
-      <div class="image-placeholder"></div>
-    </div>
-  </section>
+<section>
+    <h2>Hizmetlerim</h2>
+    <ul>
+        <li>EMDR Terapisi</li>
+        <li>Şema Terapi</li>
+        <li>Dinamik Psikoterapi</li>
+        <li>Anksiyete ve Panik Bozuklukları</li>
+        <li>Depresyon Tedavisi</li>
+        <li>Travma ve TSSB</li>
+    </ul>
+</section>
 
-  <section class="container contact-form">
-    <h2>İletişim</h2>
-    <form action="#" method="post">
-      <label for="name">Adınız</label>
-      <input type="text" id="name" name="name" placeholder="Adınızı girin">
+<section>
+    <h2>Danışan Görüşleri</h2>
+    <p>"Tuğba Hanım ile çalışmaya başladığımdan beri hayatımda çok büyük değişiklikler oldu. Panik ataklarım tamamen kontrol altına girdi. Çok empatik ve anlayışlı bir yaklaşımı var." - Ayşe K.</p>
+    <p>"Evlilik yaşantımızda ciddi problemler yaşıyorduk. Tuğba Hanım'ın çift terapisi sayesinde eşimle aramızdaki iletişimi yeniden kurduk. Gerçekten çok memnunum." - Mehmet T.</p>
+</section>
 
-      <label for="email">E-posta</label>
-      <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin">
+<footer>
+    <a href="https://wa.me/905064279578" class="whatsapp-button" target="_blank">WhatsApp ile İletişime Geç</a>
+</footer>
 
-      <label for="message">Mesajınız</label>
-      <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazın"></textarea>
-
-      <button type="submit">Gönder</button>
-    </form>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Online Psikoloji. Tüm hakları saklıdır.</p>
-      <p>Adres · Telefon · E-posta bilgileri buraya gelecek</p>
-    </div>
-  </footer>
-
-  <script>
-    // Gerekirse JS ekle (örneğin gönderim sonrası bildirim, form doğrulama vs.)
-    document.querySelector('form').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('Mesajınız gönderildi!');
-      // Burada asenkron istek ile backend'e gönderim kodu ekleyebilirsin
-    });
-  </script>
 </body>
 </html>
