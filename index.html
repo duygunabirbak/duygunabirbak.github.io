@@ -26,6 +26,7 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       padding-top: 180px; /* header yüksekliği kadar */
+      scroll-padding-top: 180px; /* scroll offset için modern destek */
     }
 
     header {
@@ -33,89 +34,98 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 180px;
-      background: rgba(184, 164, 209, 0.95);
-      color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       z-index: 1000;
-      padding: 20px 30px;
+      background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
+      padding: 30px 20px 40px; /* header yüksekliğini makul yaptık */
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
     }
 
     nav {
-      align-self: flex-end;
-      white-space: nowrap;
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-      font-size: 15px;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     header h1 {
       font-size: 2em;
-      margin: 15px 0 5px 0;
-      text-align: center;
+      margin-bottom: 0;
     }
 
     header p {
-      font-size: 1em;
+      font-size: 1.1em;
       opacity: 0.9;
-      text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .header-contact-info {
+      width: 100%;
+      max-width: 800px;
       display: flex;
       justify-content: center;
+      gap: 25px;
       flex-wrap: wrap;
-      gap: 15px;
-      font-size: 0.9em;
-      line-height: 1.5;
-      color: white;
-      text-align: center;
+      font-size: 0.95em;
     }
 
     .header-contact-info a {
       color: white;
       text-decoration: underline;
-      white-space: nowrap;
+    }
+
+    .header-contact-info a:hover {
+      text-decoration: none;
+      opacity: 0.8;
     }
 
     .whatsapp {
-      position: absolute;
-      right: 30px;
-      bottom: 20px;
+      position: fixed;
+      top: 130px; /* header içinde sağ alt gibi görünmesi için */
+      right: 20px;
       background-color: var(--whatsapp);
       color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
+      padding: 14px 18px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
       z-index: 1100;
+      transition: background-color 0.3s ease;
     }
 
     .whatsapp:hover {
-      background-color: #1ebe5a;
+      background-color: #1ebe5d;
     }
 
     section {
       width: 90%;
       max-width: 800px;
       background: var(--white);
-      margin: 30px auto;
+      margin: 50px auto 50px; /* üst boşluk arttırıldı */
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
@@ -207,48 +217,21 @@
       font-size: 0.95em;
     }
 
-    /* Responsive */
+    footer .contact-info {
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    footer .contact-info a {
+      color: #6e5c95;
+      text-decoration: none;
+    }
+
+    footer .contact-info a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
-      header {
-        height: auto;
-        padding: 20px 15px 60px;
-        position: fixed;
-      }
-
-      nav {
-        position: static;
-        margin-bottom: 10px;
-        text-align: center;
-        white-space: normal;
-      }
-
-      nav a {
-        margin: 0 10px;
-        font-size: 14px;
-      }
-
-      header h1 {
-        font-size: 1.6em;
-      }
-
-      header p {
-        font-size: 0.9em;
-      }
-
-      .header-contact-info {
-        justify-content: center;
-        gap: 10px;
-        font-size: 0.85em;
-        line-height: 1.4;
-      }
-
-      .whatsapp {
-        right: 15px;
-        bottom: 15px;
-        padding: 8px 16px;
-        font-size: 13px;
-      }
-
       #hakkimda > div {
         flex-direction: column;
         align-items: center;
@@ -258,6 +241,28 @@
         width: 100%;
         max-width: 300px;
       }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      header h1 {
+        font-size: 1.6em;
+      }
+
+      .header-contact-info {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.9em;
+      }
+
+      .whatsapp {
+        top: 120px;
+        right: 15px;
+        padding: 12px 16px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -265,10 +270,10 @@
 
 <header>
   <nav>
-    <a href="#hakkimda">Hakkımda</a>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#yorumlar">Görüşler</a>
-    <a href="#iletisim">İletişim</a>
+    <a href="#hakkimda" class="scroll-link">Hakkımda</a>
+    <a href="#hizmetler" class="scroll-link">Hizmetler</a>
+    <a href="#yorumlar" class="scroll-link">Görüşler</a>
+    <a href="#iletisim" class="scroll-link">İletişim</a>
   </nav>
 
   <h1>Tuğba Boztepe</h1>
@@ -292,9 +297,9 @@
     <p>
       Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır.Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı(450 saat ) eğitmini ve süpervizyon sürecini tamamlamıştır. İstanbul Pskodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır.
 
-      Kısa Süreli Çözüm Odaklı Terapi eğitimi tamamlamıştır. İstanbul Doğum Akademisi Hamilelik ve Doğum Psikoterapistliği Eğitimini - Doğuma Hazırlık Eğitmenliği (132 saat) eğitimini almıştır. Davranış Bilimleri Enstitüsünden EMDR (Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır.
+      Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğum Akademsi Hamilelik ve Doğum Psikoterapistliği Eğitimini- Doğuma Hazırlık Eğtmenliği (132 saat) eğitimi almıştır. Davranış Bilimleri Enstitüsünden EMDR ( Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır.
 
-      Çocuk Merkezli Oyun Terapisi Eğitimi (2-10 yaş çocuklar için) ni Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leiter Zeka Test uygulayıcısı eğitimini almıştır.
+      Çocuk Merkezli Oyun Terapisi Eğtimi(2-10yaş çocuklar için ) ni Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leter Zeka Test uygulayıcısı eğitimini almıştır.
     </p>
   </div>
 </section>
@@ -311,9 +316,9 @@
     <li>Panik Atak</li>
     <li>Sosyal Fobi</li>
     <li>Öfke Kontrolü</li>
-    <li>Hamileler için Grup Terapileri</li>
+    <li>Hamileler için Grup Terapleri</li>
     <li>Psikosomatik Ağrılar</li>
-    <li>Diyet Psikolojisi</li>
+    <li>Diyet Pskolojisi</li>
     <li>Sınav Kaygısı</li>
     <li>Evlilik ve Çift Problemleri</li>
     <li>Psikolojik problemleri belirleme ve tarama testleri</li>
@@ -344,7 +349,32 @@
 
 <footer>
   &copy; 2025 Tuğba Boztepe - Psikolojik Danışman
+  <div class="contact-info">
+    📍 Adres: Kocaeli <br />
+    📞 Telefon: <a href="tel:+905073369590">+90 507 336 95 90</a><br />
+    📸 Instagram: <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank" rel="noopener noreferrer">@psk.dan.tugbaboztepe</a>
+  </div>
 </footer>
+
+<script>
+  // Menü linklerine tıklayınca header yüksekliğini hesaplayıp scroll offset uygula
+  document.querySelectorAll('a.scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: targetPosition - headerHeight - 10,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
