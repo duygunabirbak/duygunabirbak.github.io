@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Psikolojik Danışman Tuğba Boztepe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuğba Boztepe - Psikolojik Danışman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #b8a4d1;
-      --secondary-color: #ffffff;
-      --accent-color: #6a7ba2;
-      --background-color: #f8f7fc;
-      --whatsapp-green: #47c97c;
+      --main-color: #b8a4d1;
+      --text-color: #333;
+      --bg-color: #f8f7fc;
+      --white: #ffffff;
+      --whatsapp: #25D366;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
-    /* Navigation */
+    header {
+      background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
+      padding: 60px 20px 100px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
     nav {
       position: absolute;
       top: 20px;
@@ -38,94 +45,98 @@
       text-decoration: none;
       margin-left: 20px;
       font-weight: 500;
-      transition: opacity 0.3s ease;
+      font-size: 15px;
     }
 
     nav a:hover {
-      opacity: 0.8;
-    }
-
-    header {
-      position: relative;
-      background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
-      color: white;
-      text-align: center;
-      padding: 60px 20px 40px;
+      text-decoration: underline;
     }
 
     header h1 {
-      font-family: 'Poppins', sans-serif;
       font-size: 2.5em;
       margin-bottom: 10px;
     }
 
     header p {
       font-size: 1.1em;
-      font-weight: 300;
+      opacity: 0.9;
     }
 
     section {
-      background-color: var(--secondary-color);
-      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+      background: var(--white);
+      margin: -60px auto 30px;
       padding: 30px;
       border-radius: 12px;
-      width: 90%;
-      max-width: 900px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
     }
 
     section h2 {
-      font-family: 'Poppins', sans-serif;
-      color: var(--accent-color);
+      color: var(--main-color);
       font-size: 1.5em;
       margin-bottom: 15px;
     }
 
     section p, section li {
-      font-size: 1em;
       line-height: 1.6;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    section ul {
+    ul {
       padding-left: 20px;
     }
 
-    /* Danışan kartları */
-    .reviews {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .review-card {
-      background-color: #f3f2fa;
-      padding: 20px;
-      border-left: 5px solid var(--primary-color);
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .review-card p {
-      margin: 0;
+    .review {
+      background-color: #f1edf8;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid var(--main-color);
+      border-radius: 8px;
       font-style: italic;
-      font-size: 1em;
     }
 
-    .review-card span {
+    .review span {
       display: block;
       margin-top: 10px;
       font-weight: bold;
-      color: #666;
+      font-style: normal;
       font-size: 0.95em;
     }
 
-    /* WhatsApp sabit buton */
-    .whatsapp-float {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: var(--main-color);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a28bc3;
+    }
+
+    .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: var(--whatsapp-green);
+      background-color: var(--whatsapp);
       color: white;
       padding: 14px 18px;
       border-radius: 50px;
@@ -134,49 +145,13 @@
       font-size: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       z-index: 999;
-      transition: background-color 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      background-color: #3ab16f;
-    }
-
-    /* İletişim Formu */
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: vertical;
-    }
-
-    button {
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #a28bc3;
     }
 
     footer {
       text-align: center;
       padding: 20px;
       background-color: #f0eef6;
-      color: #555;
-      margin-top: 40px;
+      color: #666;
     }
 
     @media (max-width: 600px) {
@@ -187,21 +162,12 @@
       nav {
         position: static;
         text-align: center;
-        margin-top: 10px;
+        margin-bottom: 20px;
       }
 
       nav a {
         display: inline-block;
         margin: 5px 10px;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      .whatsapp-float {
-        padding: 12px 16px;
-        font-size: 14px;
       }
     }
   </style>
@@ -211,62 +177,59 @@
 <header>
   <nav>
     <a href="#hakkimda">Hakkımda</a>
-    <a href="#hizmetler">Hizmetlerim</a>
+    <a href="#hizmetler">Hizmetler</a>
     <a href="#yorumlar">Görüşler</a>
     <a href="#iletisim">İletişim</a>
   </nav>
-  <h1>Psikolojik Danışman Tuğba Boztepe</h1>
-  <p>19 Danışandan 5/5 Puan • İstanbul</p>
+  <h1>Tuğba Boztepe</h1>
+  <p>Psikolojik Danışman</p>
 </header>
 
 <section id="hakkimda">
   <h2>Hakkımda</h2>
-  <p>Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır...</p>
-  <!-- Uzun metni burada korudum -->
+  <p>2012 yılında mezuniyetinin ardından Tuğba Boztepe, psikolojik danışmanlık alanında farklı yaş gruplarıyla çalışmış, EMDR, psikodrama, oyun terapisi gibi birçok alanda eğitim ve süpervizyon süreçlerini tamamlamıştır. Hem bireysel hem çift terapilerinde deneyimlidir.</p>
 </section>
 
 <section id="hizmetler">
-  <h2>Hizmetlerim</h2>
+  <h2>Hizmetler</h2>
   <ul>
     <li>EMDR Terapisi</li>
-    <li>Şema Terapi</li>
-    <li>Dinamik Psikoterapi</li>
-    <li>Anksiyete ve Panik Bozuklukları</li>
-    <li>Depresyon Tedavisi</li>
-    <li>Travma ve TSSB</li>
+    <li>Çift ve Aile Terapisi</li>
+    <li>Oyun Terapisi (Çocuklar için)</li>
+    <li>Kaygı ve Depresyon Terapisi</li>
+    <li>Psikodrama</li>
+    <li>Kısa Süreli Çözüm Odaklı Terapi</li>
   </ul>
 </section>
 
 <section id="yorumlar">
   <h2>Danışan Görüşleri</h2>
-  <div class="reviews">
-    <div class="review-card">
-      <p>"Tuğba Hanım ile çalışmaya başladığımdan beri hayatımda çok büyük değişiklikler oldu..."</p>
-      <span>- Ayşe K.</span>
-    </div>
-    <div class="review-card">
-      <p>"Evlilik yaşantımızda ciddi problemler yaşıyorduk..."</p>
-      <span>- Mehmet T.</span>
-    </div>
+  <div class="review">
+    "Tuğba Hanım ile seanslar bana kendimi çok daha iyi anlamayı öğretti. Artık hayatımı daha sağlıklı yönetiyorum."
+    <span>- Elif Y.</span>
+  </div>
+  <div class="review">
+    "Çift terapisi sürecinde çok destek aldık. Eşimle iletişimimiz güçlendi."
+    <span>- Hasan & Merve</span>
   </div>
 </section>
 
 <section id="iletisim">
   <h2>İletişim</h2>
   <form>
-    <input type="text" name="adsoyad" placeholder="Ad Soyad" required />
-    <input type="email" name="email" placeholder="E-posta Adresi" required />
-    <textarea name="mesaj" rows="5" placeholder="Mesajınız..." required></textarea>
+    <input type="text" placeholder="Ad Soyad" required>
+    <input type="email" placeholder="E-posta" required>
+    <textarea rows="5" placeholder="Mesajınız..." required></textarea>
     <button type="submit">Gönder</button>
   </form>
 </section>
 
-<a href="https://wa.me/905073369590" class="whatsapp-float" target="_blank">
-  WhatsApp ile İletişime Geç
+<a href="https://wa.me/905073369590" class="whatsapp" target="_blank">
+  WhatsApp ile İletişim
 </a>
 
 <footer>
-  &copy; 2025 Psikolojik Danışman Tuğba Boztepe
+  &copy; 2025 Tuğba Boztepe - Psikolojik Danışman
 </footer>
 
 </body>
