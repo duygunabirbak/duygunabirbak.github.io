@@ -24,14 +24,20 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      padding-top: 220px; /* Header sabit olduğu için içerik aşağıdan başlar */
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
       background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
       padding: 60px 20px 100px;
       color: white;
       text-align: center;
-      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     nav {
@@ -66,7 +72,7 @@
       width: 90%;
       max-width: 800px;
       background: var(--white);
-      margin: -60px auto 30px;
+      margin: 30px auto;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
