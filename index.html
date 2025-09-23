@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Psikoloji – Başlık</title>
+  <style>
+    /* Genel sıfırlamalar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Nav menü */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      font-size: 1rem;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #007BFF;
+    }
+
+    /* Hero / üst bölüm */
+    .hero {
+      background-color: #eaeaea;
+      /* placeholder için boş alan */
+      /* background: url('PLACEHOLDER_IMAGE_URL') center / cover no-repeat; */
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+
+    /* İçerik bölümleri */
+    section {
+      margin: 40px 0;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    section p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Grid düzeni örneği (resim + metin yan yana) */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid .image-placeholder {
+      background-color: #ccc;
+      width: 100%;
+      height: 200px;
+    }
+
+    .grid .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Form bölümü */
+    .contact-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      font-size: 1rem;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">LOGO</div>
+        <ul>
+          <li><a href="#">Anasayfa</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">Hizmetler</a></li>
+          <li><a href="#">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Online Psikoloji Başlığı</h1>
+  </div>
+
+  <section class="container">
+    <h2>Hakkımızda</h2>
+    <div class="grid">
+      <div class="image-placeholder"></div>
+      <div class="text">
+        <p>Buraya “Hakkımızda” metni gelecek. Bu bölümde kim olduğunuz, misyonunuz, vizyonunuz hakkında bilgi verin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Hizmetlerimiz</h2>
+    <div class="grid">
+      <div class="text">
+        <p>Online Terapi</p>
+        <p>Ebeveyn Danışmanlığı</p>
+        <p>Stres ve Anksiyete Yönetimi</p>
+      </div>
+      <div class="image-placeholder"></div>
+    </div>
+  </section>
+
+  <section class="container contact-form">
+    <h2>İletişim</h2>
+    <form action="#" method="post">
+      <label for="name">Adınız</label>
+      <input type="text" id="name" name="name" placeholder="Adınızı girin">
+
+      <label for="email">E-posta</label>
+      <input type="email" id="email" name="email" placeholder="E-posta adresinizi girin">
+
+      <label for="message">Mesajınız</label>
+      <textarea id="message" name="message" rows="5" placeholder="Mesajınızı yazın"></textarea>
+
+      <button type="submit">Gönder</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Online Psikoloji. Tüm hakları saklıdır.</p>
+      <p>Adres · Telefon · E-posta bilgileri buraya gelecek</p>
+    </div>
+  </footer>
+
+  <script>
+    // Gerekirse JS ekle (örneğin gönderim sonrası bildirim, form doğrulama vs.)
+    document.querySelector('form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Mesajınız gönderildi!');
+      // Burada asenkron istek ile backend'e gönderim kodu ekleyebilirsin
+    });
+  </script>
+</body>
+</html>
