@@ -25,7 +25,7 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      padding-top: 220px;
+      padding-top: 300px;
     }
 
     header {
@@ -35,7 +35,7 @@
       width: 100%;
       z-index: 1000;
       background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
-      padding: 60px 20px 100px;
+      padding: 60px 20px 140px;
       color: white;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -67,6 +67,17 @@
     header p {
       font-size: 1.1em;
       opacity: 0.9;
+    }
+
+    .header-contact-info {
+      margin-top: 25px;
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    .header-contact-info a {
+      color: white;
+      text-decoration: underline;
     }
 
     section {
@@ -160,16 +171,16 @@
     .whatsapp {
       position: fixed;
       bottom: 20px;
-      right: 20px;
+      left: 20px;
       background-color: var(--whatsapp);
       color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
+      padding: 12px 16px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 999;
+      z-index: 1100;
     }
 
     footer {
@@ -178,20 +189,6 @@
       background-color: #f0eef6;
       color: #555;
       font-size: 0.95em;
-    }
-
-    footer .contact-info {
-      margin-top: 15px;
-      line-height: 1.7;
-    }
-
-    footer .contact-info a {
-      color: #6e5c95;
-      text-decoration: none;
-    }
-
-    footer .contact-info a:hover {
-      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -219,20 +216,40 @@
       header h1 {
         font-size: 1.8em;
       }
+
+      .header-contact-info {
+        font-size: 0.85em;
+      }
+
+      .whatsapp {
+        bottom: 20px;
+        left: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
+  <a href="https://wa.me/905073369590" class="whatsapp" target="_blank">
+    WhatsApp
+  </a>
+
   <nav>
     <a href="#hakkimda">Hakkımda</a>
     <a href="#hizmetler">Hizmetler</a>
     <a href="#yorumlar">Görüşler</a>
     <a href="#iletisim">İletişim</a>
   </nav>
+
   <h1>Tuğba Boztepe</h1>
   <p>Psikolojik Danışman</p>
+
+  <div class="header-contact-info">
+    📍 Kocaeli<br />
+    📞 <a href="tel:+905073369590">+90 507 336 95 90</a><br />
+    📸 <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank">@psk.dan.tugbaboztepe</a>
+  </div>
 </header>
 
 <section id="hakkimda">
@@ -240,12 +257,7 @@
   <div>
     <img src="https://duygunabirbak.github.io/tugba.png" alt="Tuğba Boztepe" />
     <p>
-      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır.Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı(450 saat ) eğitmini ve süpervizyon sürecini tamamlamıştır. İstanbul Pskodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır.
-
-Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğum Akademsi Hamilelik ve Doğum Psikoterapistliği Eğitimini- Doğuma Hazırlık Eğtmenliği (132 saat) eğitimi almıştır. Davranış Bilimleri Enstitüsünden EMDR ( Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır.
-
-Çocuk Merkezli Oyun Terapisi Eğtimi(2-10yaş çocuklar için ) ni Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leter Zeka Test uygulayıcısı eğitimini almıştır.
-
+      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır. Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı (450 saat) eğitimi ve süpervizyon sürecini tamamlamıştır. İstanbul Psikodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır. Kısa Süreli Çözüm Odaklı Terapi eğitimi tamamlamıştır. İstanbul Doğum Akademisi Hamilelik ve Doğum Psikoterapistliği Eğitimini ve Doğuma Hazırlık Eğitmenliği (132 saat) eğitimi almıştır. Davranış Bilimleri Enstitüsünden EMDR (Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır. Çocuk Merkezli Oyun Terapisi Eğitimi (2-10 yaş çocuklar için) Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leiter Zeka Test uygulayıcısı eğitimini almıştır.
     </p>
   </div>
 </section>
@@ -262,9 +274,9 @@ Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğu
     <li>Panik Atak</li>
     <li>Sosyal Fobi</li>
     <li>Öfke Kontrolü</li>
-    <li>Hamileler için Grup Terapleri</li>
+    <li>Hamileler için Grup Terapileri</li>
     <li>Psikosomatik Ağrılar</li>
-    <li>Diyet Pskolojisi</li>
+    <li>Diyet Psikolojisi</li>
     <li>Sınav Kaygısı</li>
     <li>Evlilik ve Çift Problemleri</li>
     <li>Psikolojik problemleri belirleme ve tarama testleri</li>
@@ -293,17 +305,8 @@ Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğu
   </form>
 </section>
 
-<a href="https://wa.me/905073369590" class="whatsapp" target="_blank">
-  WhatsApp ile İletişim
-</a>
-
 <footer>
   &copy; 2025 Tuğba Boztepe - Psikolojik Danışman
-  <div class="contact-info">
-    📍 Adres: Kocaeli <br />
-    📞 Telefon: <a href="tel:+905073369590">+90 507 336 95 90</a><br />
-    📸 Instagram: <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank">@psk.dan.tugbaboztepe</a>
-  </div>
 </footer>
 
 </body>
