@@ -25,7 +25,7 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
-      padding-top: 180px; /* header yüksekliğine göre azaltıldı */
+      padding-top: 180px; /* header yüksekliğine göre */
     }
 
     header {
@@ -33,10 +33,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 180px; /* sabit yüksekliği ayarladım */
+      height: 180px;
       z-index: 1000;
-      background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
-      padding: 40px 20px 20px; /* üst padding azaltıldı */
+      background: rgba(184, 164, 209, 0.95); /* daha opak mor ton, beyazlık gider */
+      padding: 40px 20px 20px;
       color: white;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -50,6 +50,7 @@
       position: absolute;
       top: 20px;
       right: 30px;
+      white-space: nowrap; /* mobilde kelime kırılmasını engelle */
     }
 
     nav a {
@@ -77,7 +78,7 @@
 
     .header-contact-info {
       font-size: 0.9em;
-      line-height: 1.5;
+      line-height: 1.7; /* satırlar arasını açtım */
       color: white;
       position: absolute;
       left: 20px;
@@ -206,6 +207,7 @@
       font-size: 0.95em;
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
       #hakkimda > div {
         flex-direction: column;
@@ -221,11 +223,13 @@
         position: static;
         text-align: center;
         margin-bottom: 20px;
+        white-space: normal;
       }
 
       nav a {
         display: inline-block;
         margin: 5px 10px;
+        font-size: 14px;
       }
 
       header h1 {
@@ -238,11 +242,19 @@
 
       .header-contact-info {
         font-size: 0.85em;
-        left: 10px;
-        bottom: 10px;
+        line-height: 1.6;
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .header-contact-info a {
+        display: inline-block;
+        margin: 0 5px;
       }
 
       .whatsapp {
+        position: absolute;
         right: 10px;
         bottom: 10px;
         padding: 8px 14px;
@@ -267,7 +279,7 @@
   <div class="header-contact-info">
     📍 Kocaeli<br />
     📞 <a href="tel:+905073369590">+90 507 336 95 90</a><br />
-    📸 <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank">@psk.dan.tugbaboztepe</a>
+    📸 <a href="https://instagram.com/psk.dan.tugbaboztepe" target="_blank"> @psk.dan.tugbaboztepe</a>
   </div>
 
   <a href="https://wa.me/905073369590" class="whatsapp" target="_blank" rel="noopener noreferrer">
@@ -280,7 +292,11 @@
   <div>
     <img src="https://duygunabirbak.github.io/tugba.png" alt="Tuğba Boztepe" />
     <p>
-      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır. Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı (450 saat) eğitimi ve süpervizyon sürecini tamamlamıştır. İstanbul Psikodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır. Kısa Süreli Çözüm Odaklı Terapi eğitimi tamamlamıştır. İstanbul Doğum Akademisi Hamilelik ve Doğum Psikoterapistliği Eğitimini ve Doğuma Hazırlık Eğitmenliği (132 saat) eğitimi almıştır. Davranış Bilimleri Enstitüsünden EMDR (Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır. Çocuk Merkezli Oyun Terapisi Eğitimi (2-10 yaş çocuklar için) Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leiter Zeka Test uygulayıcısı eğitimini almıştır.
+      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır. Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı (450 saat) eğitimi ve süpervizyon sürecini tamamlamıştır. İstanbul Pskodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır.
+
+      Kısa Süreli Çözüm Odaklı Terapi eğitimi tamamlamıştır. İstanbul Doğum Akademisi Hamilelik ve Doğum Psikoterapistliği Eğitimini - Doğuma Hazırlık Eğitmenliği (132 saat) eğitimini almıştır. Davranış Bilimleri Enstitüsünden EMDR (Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır.
+
+      Çocuk Merkezli Oyun Terapisi Eğitimi (2-10 yaş çocuklar için) ni Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leiter Zeka Test uygulayıcısı eğitimini almıştır.
     </p>
   </div>
 </section>
