@@ -27,7 +27,6 @@
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      height: 140px;
       background: linear-gradient(135deg, #b8a4d1, #cbb4e4);
       color: white;
       padding: 15px 30px;
@@ -37,6 +36,7 @@
       justify-content: space-between;
       align-items: flex-start;
       max-width: 100vw;
+      flex-wrap: wrap;
     }
     .header-left {
       display: flex;
@@ -272,9 +272,7 @@
   <div>
     <img src="https://duygunabirbak.github.io/tugba.png" alt="Tuğba Boztepe" />
     <p>
-      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır. O tarihten beri birçok eğitim ve kursları tamamlayarak uzmanlaşmıştır.Yetişkin, çocuk ve çiftlerle çalışmaktadır. İstanbul Aydın Üniverstesi ve Pandost Derneğinde Aile ve Çift Danışmanlığı(450 saat ) eğitmini ve süpervizyon sürecini tamamlamıştır. İstanbul Pskodrama Enstitüsü (I.P.I. İstanbul Uluslararası Zerka Moreno Enstitüsü)'nde (350 saat) temel eğitim ve süpervizyon sürecini tamamlayarak Co-Psikodramatist ünvanını almıştır. 
-      Kısa Süreli Çözüm Odaklı Terapi eğitmini tamamlamıştır.İstanbul Doğum Akademsi Hamilelik ve Doğum Psikoterapistliği Eğitimini- Doğuma Hazırlık Eğtmenliği (132 saat) eğitimi almıştır. Davranış Bilimleri Enstitüsünden EMDR ( Göz Hareketleriyle Duyarsızlaştırma ve Yeniden İşlemleme) 1. Düzey eğitim ve süpervizyon sürecini tamamlamıştır.     
-      Çocuk Merkezli Oyun Terapisi Eğtimi(2-10yaş çocuklar için ) ni Klinik Psikolog Mehmet Teber’den almış ve süpervizyon sürecini tamamlayarak oyun terapisi uygulayıcısı olmuştur. Uluslararası Leter Zeka Test uygulayıcısı eğitimini almıştır.
+      Psk. Dan. Tuğba Boztepe, 2012 yılında Psikolojik Danışmanlık ve Rehberlik Bölümünden mezun olarak aktif olarak çalışmaya başlamıştır...
     </p>
   </div>
 </section>
@@ -310,6 +308,7 @@
   &copy; 2025 Tuğba Boztepe - Psikolojik Danışman
 </footer>
 
+<!-- DÜZENLENMİŞ SCROLL SCRIPTİ -->
 <script>
   document.querySelectorAll('a.scroll-link').forEach(link => {
     link.addEventListener('click', e => {
@@ -317,7 +316,10 @@
       const href = link.getAttribute('href');
       const target = document.querySelector(href);
       if (!target) return;
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 140;
+
+      const headerHeight = document.querySelector('header').offsetHeight;
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
       window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     });
   });
